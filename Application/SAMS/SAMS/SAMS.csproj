@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB942D7F-F18F-4609-B647-3D0FA688C5A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SAMS</RootNamespace>
+    <AssemblyName>SAMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BioMatricMachine\Controls\DataEmpty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BioMatricMachine\Controls\DataEmpty.Designer.cs">
+      <DependentUpon>DataEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BioMatricMachine\Enums\ClearFlag.cs" />
+    <Compile Include="BioMatricMachine\Info\DeviceTimeInfo.cs" />
+    <Compile Include="BioMatricMachine\Info\MachineInfo.cs" />
+    <Compile Include="BioMatricMachine\Info\UserIDInfo.cs" />
+    <Compile Include="BioMatricMachine\Info\UserInfo.cs" />
+    <Compile Include="BioMatricMachine\Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BioMatricMachine\Master.Designer.cs">
+      <DependentUpon>Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BioMatricMachine\Properties\AssemblyInfo.cs" />
+    <Compile Include="BioMatricMachine\Properties\Resources.Designer.cs" />
+    <Compile Include="BioMatricMachine\Properties\Settings.Designer.cs" />
+    <Compile Include="BioMatricMachine\Utilities\DeviceManipulator.cs" />
+    <Compile Include="BioMatricMachine\Utilities\UniversalStatic.cs" />
+    <Compile Include="BioMatricMachine\Utilities\ZkemClient.cs" />
+    <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmAddProgramme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmAddProgramme.Designer.cs">
+      <DependentUpon>frmAddProgramme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmAddSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmAddSession.Designer.cs">
+      <DependentUpon>frmAddSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmSemesters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmSemesters.Designer.cs">
+      <DependentUpon>frmSemesters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmSemesterType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmSemesterType.Designer.cs">
+      <DependentUpon>frmSemesterType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneralForms\frmSubject.Designer.cs">
+      <DependentUpon>frmSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PromoteForms\frmStudentPromote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PromoteForms\frmStudentPromote.Designer.cs">
+      <DependentUpon>frmStudentPromote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportForms\frmPrintReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportForms\frmPrintReport.Designer.cs">
+      <DependentUpon>frmPrintReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForms\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentForms\frmAddStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentForms\frmAddStudents.Designer.cs">
+      <DependentUpon>frmAddStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimeTableForms\frmTimeTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeTableForms\frmTimeTables.Designer.cs">
+      <DependentUpon>frmTimeTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Reports\rpt_GetStudentsAttandance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_GetStudentsAttandance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SourceCode\combo_helpers.cs" />
+    <EmbeddedResource Include="BioMatricMachine\Controls\DataEmpty.resx">
+      <DependentUpon>DataEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BioMatricMachine\Master.resx">
+      <DependentUpon>Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BioMatricMachine\Properties\Resources.resx" />
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralForms\frmAddProgramme.resx">
+      <DependentUpon>frmAddProgramme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralForms\frmAddSession.resx">
+      <DependentUpon>frmAddSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralForms\frmSemesters.resx">
+      <DependentUpon>frmSemesters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralForms\frmSemesterType.resx">
+      <DependentUpon>frmSemesterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralForms\frmSubject.resx">
+      <DependentUpon>frmSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PromoteForms\frmStudentPromote.resx">
+      <DependentUpon>frmStudentPromote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportForms\frmPrintReport.resx">
+      <DependentUpon>frmPrintReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForms\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentForms\frmAddStudents.resx">
+      <DependentUpon>frmAddStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeTableForms\frmTimeTables.resx">
+      <DependentUpon>frmTimeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\rpt_GetStudentsAttandance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_GetStudentsAttandance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="BioMatricMachine\bin\Debug\BioMetrixCore.exe.config" />
+    <None Include="BioMatricMachine\bin\Debug\BioMetrixCore.vshost.exe.config" />
+    <None Include="BioMatricMachine\bin\Debug\BioMetrixCore.vshost.exe.manifest" />
+    <None Include="BioMatricMachine\BioMatrix.csproj" />
+    <None Include="BioMatricMachine\BioMetrixCore.csproj" />
+    <None Include="BioMatricMachine\Properties\Settings.settings" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="BioMatricMachine\bin\Release\" />
+    <Folder Include="obj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconrefresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconrefresh15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\philipp-katzenberger-jVx8JaO2Ddc-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chris-j-davis-PT_9ux0j-x4-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rodion-kutsaev-0VGG7cqTwCo-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jefferson-santos-9SoCnyQmkzI-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Entypo_d83d%2823%29_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Entypo_d83c%2830%29_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Entypo_d83d%2829%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Entypo_d83d%2817%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontAwesome_f009%2816%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontAwesome_f00b%2814%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontAwesome_f0c9%284%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontAwesome_f00a%2815%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Entypo_e731%2837%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontAwesome_f03e%288%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\zkemkeeper.dll" />
+    <Content Include="BioMatricMachine\bin\Debug\BioMetrixCore.exe" />
+    <Content Include="BioMatricMachine\bin\Debug\BioMetrixCore.pdb" />
+    <Content Include="BioMatricMachine\bin\Debug\BioMetrixCore.vshost.exe" />
+    <Content Include="BioMatricMachine\BioMetrixCore.csproj.user" />
+    <Content Include="BioMatricMachine\dlls\zkemkeeper.dll" />
+    <Content Include="BioMatricMachine\Resources\noFileIcon.png" />
+    <None Include="Resources\logoin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="zkemkeeper">
+      <Guid>{FE9DED34-E159-408E-8490-B720A5E632C7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
